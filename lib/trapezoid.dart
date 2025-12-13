@@ -37,18 +37,24 @@ class TrapezoidState extends State<Trapezoid> {
       body: Column(
         children: [
           SizedBox(height: 30),
-          Text("กว้าง $_front  ม. ยาว $_behind ม. พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 22),),
+          Text("ด้านหน้า $_front  ม. ด้านหลัง $_behind ม. พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 22),),
           SizedBox(height: 30),
           TextField(
             controller: _frontCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ความกว้าง"), hint: Text("กรอกความกว้าง")),
+            decoration: _textFieldStyle.copyWith(label: Text("ด้านหน้า"), hint: Text("กรอกด้านหน้า")),
           ),
           SizedBox(height: 20),
           TextField(
             controller: _behindCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ความยาว"),hint: Text("กรอกความยาว")),
+            decoration: _textFieldStyle.copyWith(label: Text("ด้านหลัง"),hint: Text("กรอกด้านหลัง")),
+          ),
+          SizedBox(height: 20),
+          TextField(
+            controller: _behindCtrl,
+            keyboardType: TextInputType.number,
+            decoration: _textFieldStyle.copyWith(label: Text("ความสูง"),hint: Text("กรอกความสูง")),
           ),
           SizedBox(height: 30),
           ElevatedButton(onPressed: () => _calReg(), child: Text("คำนวณ")),
