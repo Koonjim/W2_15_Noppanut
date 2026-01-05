@@ -11,7 +11,8 @@ class TrapezoidState extends State<Trapezoid> {
   int _front = 0;
   int _behind = 0;
   int _high = 0;
-  int _area = 0;
+  double _area = 0;
+
 
   TextEditingController _frontCtrl = TextEditingController();
   TextEditingController _behindCtrl = TextEditingController();
@@ -22,8 +23,11 @@ class TrapezoidState extends State<Trapezoid> {
     _behind = int.tryParse(_behindCtrl.text) ?? 0 ;
     _high = int.tryParse(_highCtrl.text) ?? 0 ;
 
+
     setState(() {
-      _area = _front * _behind;
+      _area = ((_front + _behind) / 2) * _high;
+
+
     });
   }
   final InputDecoration _textFieldStyle = InputDecoration(
@@ -33,11 +37,11 @@ class TrapezoidState extends State<Trapezoid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("คำนวณพื้นที่สี่เหลี่ยม"), centerTitle: true),
+      appBar: AppBar(title: Text("คำนวณพื้นที่สี่เหลี่ยมคางหมู"), centerTitle: true),
       body: Column(
         children: [
           SizedBox(height: 30),
-          Text("ด้านหน้า $_front  ม. ด้านหลัง $_behind ม. พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 22),),
+          Text("ด้านหน้า $_front  ม. ด้านหลัง $_behind ม. ความสูง $_high ม. พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 15),),
           SizedBox(height: 30),
           TextField(
             controller: _frontCtrl,
@@ -52,7 +56,7 @@ class TrapezoidState extends State<Trapezoid> {
           ),
           SizedBox(height: 20),
           TextField(
-            controller: _behindCtrl,
+            controller: _highCtrl,
             keyboardType: TextInputType.number,
             decoration: _textFieldStyle.copyWith(label: Text("ความสูง"),hint: Text("กรอกความสูง")),
           ),
