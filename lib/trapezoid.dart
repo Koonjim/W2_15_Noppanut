@@ -8,9 +8,9 @@ class Trapezoid extends StatefulWidget {
 }
 
 class TrapezoidState extends State<Trapezoid> {
-  int _front = 0;
-  int _behind = 0;
-  int _high = 0;
+  double _front = 0;
+  double _behind = 0;
+  double _high = 0;
   double _area = 0;
 
 
@@ -19,9 +19,9 @@ class TrapezoidState extends State<Trapezoid> {
   TextEditingController _highCtrl = TextEditingController();
 
   void _calReg (){
-    _front = int.tryParse(_frontCtrl.text) ?? 0 ;
-    _behind = int.tryParse(_behindCtrl.text) ?? 0 ;
-    _high = int.tryParse(_highCtrl.text) ?? 0 ;
+    _front = double.tryParse(_frontCtrl.text) ?? 0 ;
+    _behind = double.tryParse(_behindCtrl.text) ?? 0 ;
+    _high = double.tryParse(_highCtrl.text) ?? 0 ;
 
 
     setState(() {
@@ -42,7 +42,8 @@ class TrapezoidState extends State<Trapezoid> {
       body: Column(
         children: [
           SizedBox(height: 30),
-          Text("ด้านหน้า $_front  ม. ด้านหลัง $_behind ม. ความสูง $_high ม. พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 15),),
+          Text("ด้านหน้า $_front  ม. ด้านหลัง $_behind ม. ความสูง $_high ม. ",style: TextStyle(fontSize: 18),),
+          Text("พื้นที่คือ $_area ตร.ม.",style: TextStyle(fontSize: 20),),
           SizedBox(height: 30),
           TextField(
             controller: _frontCtrl,
