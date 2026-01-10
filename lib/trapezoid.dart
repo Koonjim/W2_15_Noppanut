@@ -37,6 +37,7 @@ class TrapezoidState extends State<Trapezoid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[300],
       appBar: AppBar(title: Text("คำนวณพื้นที่สี่เหลี่ยมคางหมู"), centerTitle: true),
       body: Column(
         children: [
@@ -46,22 +47,23 @@ class TrapezoidState extends State<Trapezoid> {
           TextField(
             controller: _frontCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ด้านหน้า"), hint: Text("กรอกด้านหน้า")),
+            decoration: _textFieldStyle.copyWith(label: Text("ด้านหน้า"), hint: Text("กรอกด้านหน้า"),filled: true,fillColor: Colors.green[200]),
           ),
           SizedBox(height: 20),
           TextField(
             controller: _behindCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ด้านหลัง"),hint: Text("กรอกด้านหลัง")),
+            decoration: _textFieldStyle.copyWith(label: Text("ด้านหลัง"),hint: Text("กรอกด้านหลัง"),filled: true,fillColor: Colors.green[200]),
           ),
           SizedBox(height: 20),
           TextField(
             controller: _highCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ความสูง"),hint: Text("กรอกความสูง")),
+            decoration: _textFieldStyle.copyWith(label: Text("ความสูง"),hint: Text("กรอกความสูง"),filled: true,fillColor: Colors.green[200]),
           ),
           SizedBox(height: 30),
-          ElevatedButton(onPressed: () => _calReg(), child: Text("คำนวณ")),
+          ElevatedButton(onPressed: () => _calReg(), child: Text("คำนวณ"),style: TextButton.styleFrom(backgroundColor: Colors.blue[200],
+          foregroundColor: Colors.black,),),
         ],
       ),
     );

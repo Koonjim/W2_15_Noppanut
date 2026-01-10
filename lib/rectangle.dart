@@ -30,6 +30,7 @@ class RectangleState extends State<Rectangle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[300],
       appBar: AppBar(title: Text("คำนวณพื้นที่สี่เหลี่ยม"), centerTitle: true),
       body: Column(
         children: [
@@ -39,16 +40,18 @@ class RectangleState extends State<Rectangle> {
           TextField(
             controller: _widthCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ความกว้าง"), hint: Text("กรอกความกว้าง")),
+            decoration: _textFieldStyle.copyWith(label: Text("ความกว้าง"), hint: Text("กรอกความกว้าง"),filled: true,fillColor: Colors.green[200]),
+
           ),
           SizedBox(height: 20),
           TextField(
             controller: _lenghtCtrl,
             keyboardType: TextInputType.number,
-            decoration: _textFieldStyle.copyWith(label: Text("ความยาว"),hint: Text("กรอกความยาว")),
+            decoration: _textFieldStyle.copyWith(label: Text("ความยาว"),hint: Text("กรอกความยาว"),filled: true,fillColor: Colors.green[200]),
           ),
           SizedBox(height: 30),
-          ElevatedButton(onPressed: () => _calReg(), child: Text("คำนวณ")),
+          ElevatedButton(onPressed: () => _calReg(), child: Text("คำนวณ"),style: TextButton.styleFrom(backgroundColor: Colors.blue[200],
+            foregroundColor: Colors.black,)),
         ],
       ),
     );

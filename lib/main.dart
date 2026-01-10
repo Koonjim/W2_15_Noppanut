@@ -32,17 +32,20 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[300],
       body: Container(
         child: Column(
           children: [
-            SizedBox(height: 370),
+            SizedBox(height: 250),
+            Image.network("https://cdn-icons-png.freepik.com/512/3396/3396202.png",width: 200,height: 200,),
+            SizedBox(height: 30,),
             Center(
               child: TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/rectangle'),
-                child: Text('ไปที่หน้าคำนวณพื้นที่สี่เหลี่ยม'),
+                child: Text('ไปที่หน้าคำนวณพื้นที่สี่เหลี่ยม',style: TextStyle(fontSize: 16),),
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blue[200],
+                  foregroundColor: Colors.black,
                 ),
               ),
             ),
@@ -50,10 +53,10 @@ class MyHomePage extends StatelessWidget {
             Center(
               child: TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/trapezoid'),
-                child: Text('พื้นที่สี่เหลี่ยมคางหมู'),
+                child: Text('พื้นที่สี่เหลี่ยมคางหมู',style: TextStyle(fontSize: 16),),
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blue[200],
+                  foregroundColor: Colors.black,
                 ),
               ),
             ),
